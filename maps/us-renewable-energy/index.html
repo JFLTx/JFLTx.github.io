@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset=utf-8 />
+	<title>US Power Plants</title>
+	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+	<link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda"
+		rel="stylesheet"
+	/>
+  
+
+	<style>
+		/* 
+			UKy Colors: 
+            #c7c9c8 light gray 
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+		body {
+			margin: 0;
+			padding: 0;
+			background: #262626;
+			font-family: "Roboto Slab", serif;
+			font-weight: 300;
+			color: #dad8d8;
+			font-size: 100%;
+			/* 16px is default browser size */
+
+		}
+
+		h1,
+		h2,
+		h3,
+		.caption {
+			font-family: "Ruda", sans-serif;
+		}
+
+		header,
+		section,
+		footer {
+			width: 80%;
+			margin: 10px auto;
+		}
+
+		h1 {
+			font-weight: 900;
+			font-size: 2.8em;
+			font-style: italic;
+			/* The em unit. 3x the current size */
+			letter-spacing: .02em;
+			margin: 5px 0;
+			/* text-transform: uppercase; */
+		}
+
+		h2 {
+			font-weight: 300;
+			color: #dad8d8;
+			font-size: 2.2em;
+			letter-spacing: .06em;
+			font-style: italic;
+			margin: 5px 0;
+		}
+
+		h3 {
+			font-weight: 300i;
+			font-size: 1.5em;
+			margin-bottom: 5px;
+		}
+
+		h4 {
+			font-size: 2.8 em;
+			font-style: bold;
+		}
+
+		p {
+			font-size: 1.2em;
+			line-height: 1.6em;
+			margin-bottom: 4px;
+		}
+
+		/* Custom CSS elements for map-text synchronization */
+		coal {
+			color: #fa633a;
+		}
+
+		wind {
+			color: #a6cee3;
+		}
+
+		hydro {
+			color: #1f78b4;
+		}
+
+		solar {
+			color: #fae900;
+		}
+
+		a {
+			color: #004A8B;
+			font-weight: 400;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		#image:hover {
+			cursor: pointer;
+			box-shadow: #dad8d8 0 0 10px;
+		}
+
+
+		ul {
+			padding: 0px 20px 4px 20px;
+			font-size: 1.1em;
+			line-height: 1.2em;
+			color: #63666a;
+		}
+
+		li {
+			margin: 10px 0
+		}
+
+		hr {
+			margin: 20px 0;
+			border: 0;
+			height: 1px;
+			background: #63666a;
+
+		}
+
+		.linkbox {
+			margin: 3px 0 20px 0;
+			display: block;
+			font-size: 0.9em;
+			font-weight: 300;
+			line-height: 1.3em;
+		}
+
+		#map {
+			width: 100%;
+			height: 450px;
+			margin: 20px auto;
+			border: 2.5px solid #353434;
+		}
+
+		.max-image-width {
+			width: 100%;
+		}
+
+		/* Use float property to make two-column layout */
+		.first-column {
+			float: left;
+			width: 49%;
+			padding-right: 2%;
+		}
+
+		.column {
+			float: left;
+			width: 49%;
+		}
+
+		/* Clear floats after the columns */
+		.row::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+
+		/* When browser is 900px wide or less */
+		@media screen and (max-width: 900px) {
+
+			.first-column,
+			.second-column {
+				width: 100%;
+			}
+		}
+		  /* Leaflet popup styles */
+		.leaflet-popup-content, .leaflet-popup-close-button span {
+			font-family: 'Ruda', sans-serif;
+			color: #fff;
+		}
+
+		.leaflet-popup-content h3 {
+			font-family: 'Roboto  Slab', serif;
+			font-size: 1.1em;
+			margin: 2 0;
+		}
+
+			@media screen and (max-width: 900px) {
+		.first-column,
+		.second-column {
+			width: 100%;
+			}
+		}
+	</style>
+</head>
+
+<body>
+
+	<header>
+		<h1>U.S. Power Plants</h1>
+	</header>
+	<section>
+		<div class="row">
+			<div id="map"></div>
+
+			<div class="first-column">
+				<h2>Patterns of energy production</h2>
+				<p>
+					Energy production is an immensely important topic in the modern world, and as we adopt alternative resources,
+					we shoud consider the usage and spatial distribution of power plants and their energy usages.<br>
+
+					<br>Currently, <coal>coal power</coal> is more widely used (from what is shown above), as it encompasses 16.2% (or 
+					675 billion kWh) total energy generation. Despite it's negative consequences on the environment, coal is still 
+					a necessity for power generation until alternative energy sources replace it. As shown on the map, coal production is larger
+					than others shown, and has roots in the eastern portion of the US.<br>
+
+					<br>An alternative and renewable energy source is that of <hydro>hydro power</hydro>. Hydroelectric generation accounts for 
+					5.7% of the total energy production in the US, which is second to wind power under renewable energies. Generating hydroelectric 
+					energy is not without its own consequences, as it contributes to downstream issues, and failure of dams can be catastrophic. If you
+					look closely in the map, you might be able to notice linear patterns locally in hydroelectric plants.<br>
+
+					<br>The current king of renewable energy production is that of <wind>wind power</wind>, amounting to 10.2% of total energy production 
+					in the US! Wind power is promising, but unfortunately is restricted to areas where there is little relief and vegetation. After all, for wind
+					to blow fast it needs few obstacles to slow it down! Imagine this: there is an area in the contiguous US where these requirements can be met!
+					Ah yes, you can notice on the map that there exists such a place! Just feel bad for those midwesterners who have nothing nice to stare at 
+					except wind turbines.<br>
+
+					<br>Lastly, we have <solar>solar energy</solar> coming in #3 in renewable energy production (3.9% total). Solar energy production is a hot topic (pun intended)
+					in the energy field, as it has a lot of promise as we improve upon current technologies. Solar energy, like wind, is important regionally
+					where solar energy can be at an absolute maximum. For this reason, you can see on the map that solar energy is concentrated in desert and coastal parts of the 
+					US, such as California, South Carolina, and across the New England area. Places like Seattle wouldn't be a great place to gather
+					solar energy!
+
+					<!-- (<a href="https://en.wikipedia.org/wiki/Kentucky_Utilities">Wikipedia</a>) -->
+				</p>
+
+			</div>
+			<div class="column" id="image">
+				<img 
+				class="max-image-width" 
+				src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Be%C5%82chat%C3%B3w_Elektrownia.jpg" 
+				title="Coal Power Plant">
+				<div class="linkbox" id="caption">
+					Coal power plants are still a main power source despite environmental consequences. (Click me!)
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<ul>Map authored by James FL Thompson; Credits: <a href="https://www.eia.gov/tools/faqs/faq.php?id=427&t=3">
+			US Energy Information Administration</a>
+		</ul>
+		<hr/>
+	
+		<div class="row">
+			<!-- Start left column -->
+			<div class="first-column">
+			<a href="https://newmapsplus.github.io">
+				<img
+				src="https://newmapsplus.github.io/assets/graphics/logo-2018-nmp-75px-h-gray.png"
+				alt="University of Kentucky New Maps Plus"
+				/>
+			</a>
+	
+			<a href="https://uky-gis.github.io">
+				<img
+				src="https://newmapsplus.github.io/assets/graphics/logo-2018-geography-75px-h.png"
+				alt="University of Kentucky Department of Geography"
+				/>
+			</a>
+			<!-- End Left Column -->
+			</div>
+	
+			<!-- Start Right column -->
+			<ul>
+			<li>
+				See my projects on GitHub:
+				<a href="https://github.com/Geodood19">Geodood19</a>
+			</li>
+			<li>
+				See my profile on LinkedIn:
+				<a href="https://www.linkedin.com/in/james-thompson-406800159/"
+				>James Thompson</a
+				>
+			</li>
+			<li>
+				Visit my
+				<a
+				href="https://drive.google.com/drive/u/1/folders/1PbSdBp_2lngp6zbsJFVs5NLdaHRriRG8"
+				>professional portfolio</a
+				>
+				on Google Drive.
+			</li>
+			</ul>
+			<!-- End right column -->
+		</div>
+	</footer>
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="data/power-plants.js"></script>
+	<script>
+		// map options
+		var options = {
+			center: [38, -95],
+			zoom: 4
+		}
+
+		// create a Leaflet map in our division container with id of 'map'
+		var map = L.map('map', options);
+
+		// Leaflet providers base map URL
+		var basemap_source =
+			'https://cartodb-basemaps-{s}.global.ssl.fastly.net/rastertiles/dark_all/{z}/{x}/{y}.png'
+
+		// Leaflet providers attributes
+		var basemap_options = {
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a>',
+			subdomains: 'abcd',
+			maxZoom: 19
+		};
+
+		// request some basemap tiles and add to the map
+		var tiles = L.tileLayer(basemap_source, basemap_options).addTo(map);
+
+		// sort the plants GeoJSON so that smallest capacity_mw value draws on top, 
+		// biggest draws on bottom when mapped
+		plants.features.sort(function(a, b) {
+			return b.properties.capacity_mw - a.properties.capacity_mw;
+		});
+
+		// define the function getRadius for our proportional symbol map
+		function getRadius(area) {
+			var radius = Math.sqrt(area/Math.PI);
+			return radius * 0.6;
+		}
+
+		// // Set a common style for use
+		// var commonStyles = {
+		// 	weight: 1,
+		// 	stroke: 0.5,
+		// 	fillOpacity: 0.6
+		// }
+
+		// Load power plants 
+		L.geoJson(plants, {
+			pointToLayer: function (feature, latlng) {
+				return L.circleMarker(latlng, {
+					weight: 1,
+					fillOpacity: .6, // fill opacity changed to accommodate overlap, I like more transparency
+					radius: getRadius(feature.properties.capacity_mw) // getRadius function call, with capacity_mw passed as an argument
+				});
+			},
+			filter: function(feature) {
+				if (feature.properties.fuel_source.Hydro ||
+					feature.properties.fuel_source.Wind || 
+					feature.properties.fuel_source.Solar ||
+					feature.properties.fuel_source.Coal) {
+					return feature;
+				}
+			},
+			onEachFeature: function(feature, layer) {
+				// code goes here
+				// filter out for specific layers to show in map
+				// also set specific parameters for each style, such as color, UI, etc.
+				if (feature.properties.fuel_source.Hydro) {
+					layer.setStyle({
+						color: '#1f78b4',
+						opacity: 0.8,
+						fillColor: '#1f78b4',
+						radius: getRadius(feature.properties.fuel_source.Hydro)
+					});
+					// Each layer has its own mouseover/mouseout effect
+					// likely not the most efficient way to accomplish this, but it is what I could wrap my brain around
+					layer.on('mouseover', function() {
+						layer.setStyle({
+							fillColor: 'red'
+						});
+					});
+					layer.on('mouseout', function() {
+						layer.setStyle({
+							fillColor: '#1f78b4'
+						});
+					});
+				} else if (feature.properties.fuel_source.Wind) {
+					layer.setStyle({
+						color: '#a6cee3',
+						opacity: 0.8,
+						fillColor: '#a6cee3', 
+						radius: getRadius(feature.properties.fuel_source.Wind)
+					});
+					layer.on('mouseover', function() {
+						layer.setStyle({
+							fillColor: 'red'
+						});
+					});
+					layer.on('mouseout', function() {
+						layer.setStyle({
+							fillColor: '#a6cee3'
+						});
+					});
+				} else if (feature.properties.fuel_source.Solar) {
+					layer.setStyle({
+						color: '#fae900',
+						opacity: 0.8,
+						fillColor: '#fae900',
+						radius: getRadius(feature.properties.fuel_source.Solar)
+					});
+					layer.on('mouseover', function() {
+						layer.setStyle({
+							fillColor: 'red'
+						});
+					});
+					layer.on('mouseout', function() {
+						layer.setStyle({
+							fillColor: '#fae900'
+						});
+					});
+				} else if (feature.properties.fuel_source.Coal) {
+					layer.setStyle({
+						color: '#fa633a',
+						opacity: 0.8,
+						fillColor: '#fa633a',
+						radius: getRadius(feature.properties.fuel_source.Coal)
+					});
+					layer.on('mouseover', function() {
+						layer.setStyle({
+							fillColor: 'red'
+						});
+					});
+					layer.on('mouseout', function() {
+						layer.setStyle({
+							fillColor: '#fa633a'
+						});
+					});
+				};
+			// create a tooltip/popup with a bold plant name, and the MW output 
+			layer.bindTooltip(`<h3><b>${layer.feature.properties.plant_name}</b></h3> 
+								Capacity: ${layer.feature.properties.capacity_mw} MW`);
+			},
+		}).addTo(map);
+
+		// JavaScript to control image swapping
+		// Let's tell a story in our maps, shall we!
+		var img = document.querySelector("#image img");
+		var caption = document.querySelector("#caption");
+		img.addEventListener("click", function () {
+			if (
+			img.src ===
+			"https://upload.wikimedia.org/wikipedia/commons/3/3f/Be%C5%82chat%C3%B3w_Elektrownia.jpg"
+			) {
+			img.src =
+				"https://www.ws-corp.com/LiveEditor/images/SLIDES/13/1.jpg";
+			img.title = "Hydro Power";
+			caption.innerHTML =
+				"Hydro power is a great renewable alternative to coal, although potentially environmentally destructive. (Click)";
+			} else if (
+			img.src === 
+				"https://www.ws-corp.com/LiveEditor/images/SLIDES/13/1.jpg"
+			) {
+			img.src =
+				"https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202212/MIT-Windy-Impact-01_0.jpg?itok=It9IiJZp";
+			img.title = "Wind Power";
+			caption.innerHTML = 
+				"Wind is another renewable energy alternative, but it is essentially locked to specific regions of the US. (Click)"
+			} else if (
+			img.src === 
+				"https://news.mit.edu/sites/default/files/styles/news_article__image_gallery/public/images/202212/MIT-Windy-Impact-01_0.jpg?itok=It9IiJZp"
+			) {
+			img.src =
+				"https://justenergy.com/wp-content/uploads/2018/10/Solar-1.jpg";
+			img.title = "Solar Power";
+			caption.innerHTML = 
+				"Lastly, solar is another promising alternative energy source. Unfortunately, it too is extremely dependent on a lot of factors, such as weather. (Click)"
+			} else {
+			img.src =
+				"https://upload.wikimedia.org/wikipedia/commons/3/3f/Be%C5%82chat%C3%B3w_Elektrownia.jpg";
+			img.title = "Coal Power Plant";
+			caption.innerHTML =
+				"Coal power plants are still a main power source despite environmental consequences. (Click me!)";
+			}
+		});
+
+
+	</script>
+
+</body>
+
+</html>
