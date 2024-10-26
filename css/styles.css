@@ -1,0 +1,196 @@
+/*!
+ * Start Bootstrap - Heroic Features (https://startbootstrap.com/template-overviews/heroic-features)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-heroic-features/blob/master/LICENSE)
+ */
+
+:root {
+  /* --warm-black-1: #1A1A1A;
+    --warm-black-2: #2C2828;
+    --warm-black-3: #3E3A3A;
+    --warm-black-4: #504B4B;
+    --warm-black-5: #635E5E; */
+  --warm-black-1: #252525;
+  --warm-black-2: #333333;
+  --warm-black-3: #404040;
+  --warm-black-4: #4c4c4c;
+  --warm-black-5: #595959;
+  --warm-black-6: #c4c4c4;
+  --text-color: #e4dddc;
+  --link-color: #0099ff;
+  --link-hover-color: #ff7b00;
+  --font-base: "Overlock", sans-serif;
+  --font-accent: "Kalam", cursive;
+}
+
+/* Overwrite Bootstrap's styles */
+
+.bg-dark {
+  background-color: var(--warm-black-1) !important;
+}
+
+.bg-secondary {
+  background-color: var(--warm-black-2) !important;
+}
+
+.bg-body-tertiary {
+  background-color: var(--warm-black-3) !important;
+}
+
+.card-body {
+  background-color: var(--warm-black-4) !important;
+}
+
+.text-light {
+  color: var(--text-color) !important;
+  text-shadow: 1 1 1 black !important;
+}
+
+.modal-header,
+.modal-footer {
+  border: none;
+}
+
+.modal-header .btn-close {
+  background-color: var(--warm-black-5);
+}
+
+body {
+  /* apply custom rules to the body here */
+  font-family: var(--font-base);
+  font-weight: 300;
+  font-style: normal;
+  background-color: var(--warm-black-1);
+  color: var(--text-color);
+  font-size: 100%;
+  text-shadow: 0.5 0.5 1 black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 1 1 2 black;
+  color: #ff7b00;
+}
+
+.title {
+  font-family: var(--font-accent);
+  font-size: 2rem;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 1 1 2 black;
+}
+
+header {
+  background: linear-gradient(
+      45deg,
+      rgba(22, 22, 22, 0.7) 0%,
+      rgba(46, 43, 43, 0.9) 100%
+    ),
+    url("https://live.staticflickr.com/65535/54094784726_9580df01c6_k.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: var(--font-base);
+  text-shadow: 1 1 2 black;
+  font-size: 3rem;
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+  padding: 30vh 0;
+}
+
+header h1 {
+  font-family: var(--font-accent);
+  font-size: 6rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  text-shadow: 1 1 2 black;
+}
+
+a:hover {
+  color: var(--link-hover-color);
+  text-decoration: none;
+  text-shadow: 1 1 2 black;
+}
+
+/* media query when the media is wider than 992px */
+@media (min-width: 992px) {
+  header {
+    padding: 156px 0 100px;
+  }
+}
+
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* Google Font Styles */
+
+.kalam-light {
+  font-family: "Kalam", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.kalam-regular {
+  font-family: "Kalam", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.kalam-bold {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.overlock-regular {
+  font-family: "Overlock", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.overlock-bold {
+  font-family: "Overlock", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.overlock-black {
+  font-family: "Overlock", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.overlock-regular-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.overlock-bold-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.overlock-black-italic {
+  font-family: "Overlock", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
