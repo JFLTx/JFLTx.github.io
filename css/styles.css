@@ -121,16 +121,41 @@ header p {
   font-size: 2rem;
 }
 
-a {
+/* Keyframe for fade-in and slide-up */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to header text */
+header h1,
+header p {
+  animation: fadeInSlideUp 1s ease-out;
+}
+
+a,
+nav-link {
   color: var(--link-color);
   text-decoration: none;
   text-shadow: 1 1 2 black;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
 }
 
 a:hover {
   color: var(--link-hover-color);
   text-decoration: none;
   text-shadow: 1 1 2 black;
+}
+
+.nav-link:hover {
+  transform: translateY(-2px);
+  color: var(--link-hover-color);
 }
 
 .title {
@@ -150,6 +175,12 @@ nav img {
   color: var(--text-color);
   /* border: none; */
   border-radius: 2%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card .card-img-top {
@@ -190,7 +221,6 @@ nav img {
   margin: 0;
   border-radius: 1.5%;
 }
-
 
 /* Modals */
 .modal-body iframe {
