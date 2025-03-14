@@ -173,8 +173,8 @@ nav img {
 .card {
   background-color: var(--warm-black-2);
   color: var(--text-color);
-  /* border: none; */
   border-radius: 2%;
+  transform: translateY(5px);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -190,6 +190,17 @@ nav img {
 
 .portfolio-item {
   margin-bottom: 30px;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* space between the image and text */
+}
+
+.about-container img {
+  max-width: 300px;
+  height: auto;
 }
 
 #map {
@@ -238,6 +249,19 @@ nav img {
     nav img {
       display: inline !important;
     }
+  }
+}
+
+/* media query when window width is smaller than 768px */
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-container img {
+    max-width: 80%;
+    height: auto;
   }
 }
 
