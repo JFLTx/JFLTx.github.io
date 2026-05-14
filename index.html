@@ -1,322 +1,661 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <title>JFLT Portfolio</title>
 
-  <title>JFLT Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome CSS from CDN -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
 
-  <!-- Font Awesome CSS from CDN -->
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+    <!-- Google web font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Google web font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Overlock:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
-    rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
 
-  <!-- Custom styles for this template -->
-  <link href="css/styles.css" rel="stylesheet" />
-</head>
-
-<body id="page-top">
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#page-top">Portfolio</a>
-      <div class="float-end">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">About</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Welcome Section -->
-  <header class="bg-dark text-light">
-    <div class="container">
-      <h1>Let's Explore Some Maps</h1>
-      <p class="lead display-6 spectral-extralight">
-        A collection of maps developed by James FL Thompson
-      </p>
-      <p class="lead">
-        Developed for <a href="https://newmapsplus.as.uky.edu/" target="_blank">NewMapsPlus</a>, <a
-          href="https://www.palmernet.com/" target="_blank">Palmer Engineering</a>,
-        and for fun!
-      </p>
-    </div>
-  </header>
-
-  <!-- Projects Section -->
-  <section id="projects" class="bg-secondary">
-    <div class="container">
-      <!-- group items to keep cards inside of -->
-      <div class="row">
-
-        <!-- MAP675 final project - Appalachian Landslides  -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://contig.us/jflt/appalachian-landslides" target="_blank"><img class="card-img-top" src="images/appal-landslides.png"
-                alt="Appal landslides" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://contig.us/jflt/appalachian-landslides" target="_blank">Appalachian Landslides</a>
-              </h4>
-              <p class="card-text text-light">
-                This web map explores appalachian landslides in Eastern Kentucky using MapLibre GL JS, PMTiles, Node.js, and more. 
-                Data was extracted from the Kentucky Geological Survey and prepped using QGIS 3.34.2 in NewMapsPlus MAP675 course.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- KYTC District 12 Landslide / Rockfall Study  -->
-             <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://jfltx.github.io/d12-landslides/" target="_blank"><img class="card-img-top" src="images/d12-landslides.png"
-                alt="D12 Landslides" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://jfltx.github.io/d12-landslides/" target="_blank">D12 Landslides / Rockfalls</a>
-              </h4>
-              <p class="card-text text-light">
-                Exploring techniques from NewMapsPlus MAP675, this web map shows landslides and rockfalls that occurred within KYTC Distrit 12 for KYTC Item No. 12-5020. 
-                Developed using Maplibre GL JS, PMTiles, and Node.js. Developed for Palmer Engineering in partnership with APSGEO. 
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Montgomery County Safety Study Card -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://jfltx.github.io/montgomery-ky-safety-study/" target="_blank"><img class="card-img-top"
-                src="images/moco-safety-study.png" alt="Montgomery County Safety Study" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://jfltx.github.io/montgomery-ky-safety-study/" target="_blank">Montgomery Co. Safety Study</a>
-              </h4>
-              <p class="card-text text-light">
-                A digital map showing crashes in Montgomery County, KY from January 2015 to December 2024.
-                Devleoped using Maplibre GL JS. Data prepared in QGIS 3.34.2 using SQL to identify high injury networks. Developed for NewMapsPlus MAP674
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- US-31W interactive web map Card -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://jfltx.github.io/US-31W-crashes/" target="_blank"><img class="card-img-top"
-                src="images/us31W-crashes-thumbnail.JPG" alt="US-31W Improvements" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://jfltx.github.io/US-31W-crashes/" target="_blank">US-31W Improvements</a>
-              </h4>
-              <p class="card-text text-light">
-                An interactive web map using Leaflet.js and D3.js to show improvement in US-31W crashes
-                after construction in Elizabethtown, KY. Map developed for KYTC District 4, courtesy of Palmer
-                Engineering.
-            </div>
-          </div>
-        </div>
-
-        <!-- Pikeville SAP Interactive Map  -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://jfltx.github.io/pikeville-crashes/" target="_blank"><img class="card-img-top"
-                src="images/pikevilleSAP-thumbnail.JPG" alt="Pikeville SAP" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://jfltx.github.io/pikeville-crashes/" target="_blank">Pikeville Safety Action Plan</a>
-              </h4>
-              <p class="card-text text-light">
-                An interactive web map to showcase five-year crash data and safety initiatives for Pikeville's Safety
-                Action Plan. Map developed using Leaflet.js and D3.js, courtesy of Palmer Engineering.
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Modernized Topos Card -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504102" target="_blank"><img
-                class="card-img-top" src="images/katahdin-thumbnail.JPG" alt="Modernized USGS Topos - album" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504102"
-                  target="_blank">Modernized USGS Topographic Maps</a>
-              </h4>
-              <p class="card-text text-light">
-                USGS topographic maps are classy and beautiful. What if we added modern elevation data to them?
-                This album answers that question. Developed using ArcGIS Pro.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- lluminated Visibility Card -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504437" target="_blank"><img
-                class="card-img-top" src="images/PK-visibility-thumbnail.JPG"
-                alt="Illuminated Visibility - album" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504437"
-                  target="_blank">Illuminated Visibility Maps</a>
-              </h4>
-              <p class="card-text text-light">
-                Visibility maps for two of my favorite destinations inspired
-                by John Nelson's online tutorials. Maps viewing Pilot Knob State Nature Sanctuary, KY and Mount
-                San Jacinto State Park, CA. Developed using ArcGIS Pro.
-              </p>
-            </div>
-          </div>
-        </div>
-        <!-- GSM Thumbnail -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://drive.google.com/file/d/15b6COPiTzVu1abYLl5eTtzipZkx5i4fK/view?usp=sharing"
-              target="_blank"><img class="card-img-top" src="images/GSM-thumbnail.JPG" alt="GSM 3D" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://drive.google.com/file/d/15b6COPiTzVu1abYLl5eTtzipZkx5i4fK/view?usp=sharing"
-                  target="_blank">Smoky Mountains Nat'l Park - 3D</a>
-              </h4>
-              <p class="card-text text-light">
-                The Great Smoky Mountains are a wonder to behold. This static map explores the park as a 3-Dimensional
-                "shoebox" cutout. Developed using ArcGIS Pro.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- KIPDA SS4A Static Maps card -->
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <div class="card h-100">
-            <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321503397" target="_blank"><img
-                class="card-img-top" src="images/KIPDA-thumbnail.JPG" alt="" /></a>
-            <div class="card-body">
-              <h4 class="card-title">
-                <a href="https://www.flickr.com/photos/200063877@N03/albums/72177720321503397" target="_blank">KIPDA
-                  SS4A
-                  Maps</a>
-              </h4>
-              <p class="card-text text-light">
-                A collection of static maps developed for Palmer Engineering
-                in partnership with HDR Inc. for the KIPDA SS4A grant
-                application. Maps developed using ArcGIS Pro and Python.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div> <!-- End row div -->
-    </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="bg-body-tertiary text-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2>About me</h2>
-          <div class="about-container my-5">
-            <img class="rounded-circle img-fluid" src="images/Me_again.png" alt="James" />
-            <div>
-              <p class="lead">
-                Hi! I am James. Currently a GIS Analyst at Palmer Engineering where I am pursuing a
-                Master of Science in Digital Mapping at the University of Kentucky.
-              </p>
-              <p class="lead">
-                When I am not contemplating banging a hammer into my computer, I am doing judo,
-                hiking or rucking, weightlifting, or spending time with my family.
-              </p>
-            </div>
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top navbar-dark bg-dark"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#page-top">Portfolio</a>
+        <div class="float-end">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-6">
-          <h3>Skills</h3>
-          <ul class="list-unstyled">
-            <li>
-              <strong>GIS:</strong>
-              <p>
-                QGIS/ArcGIS Pro for data analysis, manipulation, format conversion, and cartography.
-              </p>
-            </li>
-            <li>
-              <strong>Web mapping:</strong>
-              <p>
-                Leaflet for raster tilesets, basic thematic mapping, and
-                telling stories with maps.
-                MapLibre for vector datasets and visualizations.
-              </p>
-            </li>
-            <li>
-              <strong>Coding:</strong>
-              <p>Building proficiency with JavaScript, HTML, CSS, and Python</p>
-            </li>
-          </ul>
+    </nav>
+
+    <!-- Welcome Section -->
+    <header class="bg-dark text-light">
+      <div class="container">
+        <h1>Let's Explore Some Maps</h1>
+        <p class="lead display-6 spectral-extralight">
+          A collection of maps developed by James FL Thompson
+        </p>
+        <p class="lead">
+          Developed for
+          <a href="https://newmapsplus.as.uky.edu/" target="_blank"
+            >NewMapsPlus</a
+          >,
+          <a href="https://www.palmernet.com/" target="_blank"
+            >Palmer Engineering</a
+          >, and for fun!
+        </p>
+      </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-secondary">
+      <div class="container">
+        <!-- Interactive Web Maps -->
+        <div class="category-header">
+          <h3>Interactive Web Maps</h3>
         </div>
-        <div class="col-md-6">
-          <h3>Reach out!</h3>
-          <ul class="list-unstyled">
-            <li class="">
-              <i class="fa fa-file me-2"></i><a href="documents/JFLT RESUME 03-25.pdf" target="_blank">Resume</a>
-            </li>
-            <li class="">
-              <i class="fa fa-linkedin me-2"></i><a href="https://www.linkedin.com/in/james-thompson-406800159/"
-                target="_blank">James FL Thompson</a>
-            </li>
-            <li class="mr-2">
-              <i class="fa fa-github me-2"></i><a href="https://github.com/JFLTx" target="_blank">JFLTx</a>
-            </li>
-            <li class="">
-              <i class="fa fa-envelope me-2"></i><a href="mailto:jflthompson25@gmail.com"
-                target="_blank">jflthompson25@gmail.com</a>
-            </li>
-          </ul>
+        <div class="row">
+          <!-- KY Noise Exposure -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/ky-noise-exposure/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/ky-noise.png"
+                  alt="KY Noise Exposure"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/ky-noise-exposure/"
+                    target="_blank"
+                    >KY Noise Exposure</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  MS Digital Mapping capstone exploring noise exposure in
+                  Kentucky using US DOT's National Transportation Noise Map
+                  data. Vector tiles hosted on AGOL.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">Vite</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">AGOL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Appalachian Landslides -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://contig.us/jflt/appalachian-landslides"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/appal-landslides.png"
+                  alt="Appalachian Landslides"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://contig.us/jflt/appalachian-landslides"
+                    target="_blank"
+                    >Appalachian Landslides</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Explores landslide data in Eastern Kentucky from the Kentucky
+                  Geological Survey, prepped in QGIS 3.34.2. Developed in
+                  NewMapsPlus MAP675.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">Node.js</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- D12 Landslides -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a href="https://jfltx.github.io/d12-landslides/" target="_blank">
+                <img
+                  class="card-img-top"
+                  src="images/d12-landslides.png"
+                  alt="D12 Landslides"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/d12-landslides/"
+                    target="_blank"
+                    >D12 Landslides &amp; Rockfalls</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Landslides and rockfalls within KYTC District 12 for KYTC Item
+                  No. 12-5020. Developed for Palmer Engineering in partnership
+                  with APS GEO.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">Node.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End web maps row -->
+
+        <!-- Crash & Safety Maps -->
+        <div class="category-header">
+          <h3>Crash &amp; Safety Maps</h3>
+        </div>
+        <div class="row">
+          <!-- Montgomery County Crashes -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/montgomery-county-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/moco-crashes.png"
+                  alt="Montgomery County Crashes"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/montgomery-county-crashes/"
+                    target="_blank"
+                    >Montgomery County Crashes</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive crash map for Montgomery County, KY, analyzing
+                  collision patterns and high-injury networks. Developed for
+                  Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Henderson County Crashes -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/henderson-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/henderson-crashes.png"
+                  alt="Henderson County Crashes"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/henderson-crashes/"
+                    target="_blank"
+                    >Henderson County Crashes</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive crash map for Henderson County, KY. Visualizes
+                  five-year collision data to support transportation safety
+                  planning. Developed for Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scott County Crashes -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/scott-county-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/scott-co-crashes.png"
+                  alt="Scott County Crashes"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/scott-county-crashes/"
+                    target="_blank"
+                    >Scott County Crashes</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive crash map for Scott County, KY. Visualizes
+                  five-year collision data to support transportation safety
+                  planning. Developed for Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Clark County Crashes -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/clark-county-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/clark-co-crashes.png"
+                  alt="Clark County Crashes"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/clark-county-crashes/"
+                    target="_blank"
+                    >Clark County Crashes</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive crash map for Clark County, KY. Visualizes
+                  five-year collision data to support transportation safety
+                  analysis. Developed for Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Barren County Crashes -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/barren-county-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/barren-co-crashes.png"
+                  alt="Barren County Crashes"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/barren-county-crashes/"
+                    target="_blank"
+                    >Barren County Crashes</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive crash map for Barren County, KY. Visualizes
+                  five-year collision data to support transportation safety
+                  analysis. Developed for Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">MapLibre GL JS</span>
+                  <span class="tech-tag">PMTiles</span>
+                  <span class="tech-tag">QGIS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pikeville SAP -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://jfltx.github.io/pikeville-crashes/"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/pikevilleSAP-thumbnail.JPG"
+                  alt="Pikeville SAP"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://jfltx.github.io/pikeville-crashes/"
+                    target="_blank"
+                    >Pikeville Safety Action Plan</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Interactive web map showcasing five-year crash data and safety
+                  initiatives for Pikeville's Safety Action Plan. Developed for
+                  Palmer Engineering.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">Leaflet.js</span>
+                  <span class="tech-tag">D3.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End crash maps row -->
+
+        <!-- Static & Print Maps -->
+        <div class="category-header">
+          <h3>Static &amp; Print Maps</h3>
+        </div>
+        <div class="row">
+          <!-- Modernized Topos -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504102"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/katahdin-thumbnail.JPG"
+                  alt="Modernized USGS Topos"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504102"
+                    target="_blank"
+                    >Modernized USGS Topographic Maps</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  USGS topographic maps are classy and beautiful. What if we
+                  added modern elevation data to them? This album answers that
+                  question.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">ArcGIS Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Illuminated Visibility -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504437"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/PK-visibility-thumbnail.JPG"
+                  alt="Illuminated Visibility Maps"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://www.flickr.com/photos/200063877@N03/albums/72177720321504437"
+                    target="_blank"
+                    >Illuminated Visibility Maps</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Visibility maps for Pilot Knob State Nature Sanctuary, KY and
+                  Mount San Jacinto State Park, CA. Inspired by John Nelson's
+                  tutorials.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">ArcGIS Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GSM 3D -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://drive.google.com/file/d/15b6COPiTzVu1abYLl5eTtzipZkx5i4fK/view?usp=sharing"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/GSM-thumbnail.JPG"
+                  alt="Smoky Mountains 3D"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://drive.google.com/file/d/15b6COPiTzVu1abYLl5eTtzipZkx5i4fK/view?usp=sharing"
+                    target="_blank"
+                    >Smoky Mountains Nat'l Park &mdash; 3D</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  The Great Smoky Mountains as a 3D "shoebox" cutout, exploring
+                  the park's dramatic topography through modern cartographic
+                  techniques.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">ArcGIS Pro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- KIPDA SS4A -->
+          <div class="col-lg-4 col-sm-6 portfolio-item">
+            <div class="card h-100">
+              <a
+                href="https://www.flickr.com/photos/200063877@N03/albums/72177720321503397"
+                target="_blank"
+              >
+                <img
+                  class="card-img-top"
+                  src="images/KIPDA-thumbnail.JPG"
+                  alt="KIPDA SS4A Maps"
+                />
+              </a>
+              <div class="card-body">
+                <h4 class="card-title">
+                  <a
+                    href="https://www.flickr.com/photos/200063877@N03/albums/72177720321503397"
+                    target="_blank"
+                    >KIPDA SS4A Maps</a
+                  >
+                </h4>
+                <p class="card-text text-light">
+                  Static maps developed for Palmer Engineering in partnership
+                  with HDR Inc. for the KIPDA SS4A grant application.
+                </p>
+                <div class="tech-tags">
+                  <span class="tech-tag">ArcGIS Pro</span>
+                  <span class="tech-tag">Python</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End static maps row -->
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-body-tertiary text-light">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+            <h2>About me</h2>
+            <div class="about-container my-5">
+              <img
+                class="img-fluid"
+                src="images/ahike.jpg"
+                alt="James"
+              />
+              <div>
+                <p class="lead">
+                  Hi! I am James. Currently a GIS Analyst at Palmer Engineering
+                  holding a Bachelor of Science degree from Eastern Kentucky
+                  University in Geology and GIS, and a Master of Science degree
+                  from the University of Kentucky in Digital Mapping. I have a
+                  passion for cartography and spatial analysis, and I am always
+                  eager to learn new techniques and tools to create compelling
+                  maps that tell stories and inform decision-making.
+                </p>
+                <p class="lead">
+                  When I am not contemplating banging a hammer into my computer,
+                  I am doing judo, rucking, weightlifting, or spending time with
+                  my family. You might catch me on a hike in Kentucky's scenic
+                  wilderness!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Skills</h3>
+            <ul class="list-unstyled">
+              <li>
+                <strong>GIS:</strong>
+                <p>
+                  QGIS/ArcGIS Pro for data analysis, manipulation, format
+                  conversion, and cartography.
+                </p>
+              </li>
+              <li>
+                <strong>Web mapping:</strong>
+                <p>
+                  MapLibre GL JS, Leaflet JS, D3.js, and PMTiles for interactive
+                  web maps. Vite and Node.js for development and build
+                  processes.
+                </p>
+              </li>
+              <li>
+                <strong>Coding:</strong>
+                <p>JavaScript, HTML, CSS, and Python</p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h3>Reach out!</h3>
+            <ul class="list-unstyled">
+              <li class="">
+                <i class="fa fa-file me-2"></i
+                ><a href="documents/JFLT Resume 2026.pdf" target="_blank"
+                  >Resume</a
+                >
+              </li>
+              <li class="">
+                <i class="fa fa-linkedin me-2"></i
+                ><a
+                  href="https://www.linkedin.com/in/james-thompson-406800159/"
+                  target="_blank"
+                  >James FL Thompson</a
+                >
+              </li>
+              <li class="mr-2">
+                <i class="fa fa-github me-2"></i
+                ><a href="https://github.com/JFLTx" target="_blank">JFLTx</a>
+              </li>
+              <li class="">
+                <i class="fa fa-envelope me-2"></i
+                ><a href="mailto:jflthompson25@gmail.com" target="_blank"
+                  >jflthompson25@gmail.com</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">
-        <!-- Copyright &copy;--> James FL Thompson &mdash; Oct. 2025
-      </p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">James FL Thompson &mdash; 2026</p>
+      </div>
+    </footer>
 
-  <!-- Bootstrap JavaScript -->
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-</body>
-
+    <!-- Bootstrap JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
